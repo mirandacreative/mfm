@@ -44,3 +44,44 @@ add_action('wp_enqueue_scripts', 'mc_enqueue_my_styles');
             }
             
 add_action('wp_enqueue_scripts', 'google_fonts');
+
+
+// ACF Pro Options Page
+
+
+
+if (function_exists('acf_add_options_page')) {
+
+
+
+    acf_add_options_page(array(
+
+        'page_title' => 'Theme General Settings',
+
+        'menu_title' => 'Theme Settings',
+
+        'menu_slug' => 'theme-general-settings',
+
+        'capability' => 'edit_posts',
+
+        'redirect' => false
+
+    ));
+
+
+
+}
+
+/**
+ * Hides the admin bar on a template page.
+ */
+function hide_admin_bar() {
+    wp_add_inline_style('admin-bar', '<style> html { margin-top: 0 !important; } </style>');
+    return false;
+}
+add_filter( 'show_admin_bar', 'hide_admin_bar' );
+
+// this filter adds a dashboard button near the edit btn for easy dash access
+add_filter( 'genesis_edit_post_link', function(){ 
+edit_post_link( __( 'EDIT', 'textdomain' ), '', ' | <a href="/wp-admin/">Dashboard</a>' );
+ });

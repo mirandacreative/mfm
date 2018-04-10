@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
         <?php include "inc/parts/blurb.php" ?>
         <?php include "inc/parts/highlights.php" ?>
         <?php include "inc/parts/gallerysquare.php" ?>
