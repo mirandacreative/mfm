@@ -1,0 +1,34 @@
+# Miranda Creative Git Ignore version 2018.1.1
+# Wordpress #
+*.log
+.htaccess
+
+/readme.html
+/license.txt
+
+#   Node    #
+node_modules/
+
+#   OSX     #
+.DS_Store
+
+#  Sublime  #
+sftp-config.json
+.sublime-workspace
+
+#  Wordmove #
+Movefile
+Movefile.yml
+movefile.yml
+
+#  Jetbrains #
+.idea/
+.idea
+
+#Shell scripts Etc. #
+.sh
+.backup
+.sql
+.gz
+.zip
+.7z
