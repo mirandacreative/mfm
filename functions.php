@@ -85,3 +85,23 @@ add_filter( 'show_admin_bar', 'hide_admin_bar' );
 add_filter( 'genesis_edit_post_link', function(){ 
 edit_post_link( __( 'EDIT', 'textdomain' ), '', ' | <a href="/wp-admin/">Dashboard</a>' );
  });
+
+// lets add us some menyahs(menus)
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'main-menu' => __( 'Main Menu' ),
+      'temp-menu' => __( 'Temp Menu' )
+     )
+   );
+ }
+ add_action( 'init', 'register_my_menus' );
+
+ function atg_menu_classes($classes, $item, $args) {
+  if($args->theme_location == 'main-menu') {
+    $classes[] = 'list-inline-item';
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class','atg_menu_classes',1,3);
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
