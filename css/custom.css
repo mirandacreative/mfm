@@ -262,10 +262,11 @@ section h2 {
   color: #ffffff;
 }
 
+/*Commented out becuase this will be variable for sub pages so I placed the background css Inline
 header.hero {
   background: url("../img/heroimage-holder.png") no-repeat;
   background-size: cover;
-}
+}*/
 
 header.hero .hero-inner {
   padding: 10rem 2rem;
