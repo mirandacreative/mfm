@@ -8,7 +8,10 @@
 function mc_enqueue_my_scripts() {
     // jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts 
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-
+   wp_enqueue_script( 'responsive-menyas', get_stylesheet_directory_uri() . '/js/responsive-menus.min.js'); // all 
+   wp_enqueue_script( 'matchheight', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js'); // all   
+   wp_enqueue_script( 'bootvalidate', get_stylesheet_directory_uri() . '/js/jqBootstrapValidation.min.js ');
+   wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js ');    
 }
 add_action('wp_enqueue_scripts', 'mc_enqueue_my_scripts');
 
@@ -18,6 +21,7 @@ function mc_enqueue_mccode() {
   wp_enqueue_script('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js', array('jquery'), true);
      // jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts  
      wp_enqueue_script( 'ekko-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');   
+     wp_enqueue_script( 'ekko-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');        
 
 }
 add_action('wp_enqueue_scripts', 'mc_enqueue_mccode');
@@ -85,3 +89,23 @@ add_filter( 'show_admin_bar', 'hide_admin_bar' );
 add_filter( 'genesis_edit_post_link', function(){ 
 edit_post_link( __( 'EDIT', 'textdomain' ), '', ' | <a href="/wp-admin/">Dashboard</a>' );
  });
+
+// lets add us some menyahs(menus)
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'main-menu' => __( 'Main Menu' ),
+      'temp-menu' => __( 'Temp Menu' )
+     )
+   );
+ }
+ add_action( 'init', 'register_my_menus' );
+
+ function atg_menu_classes($classes, $item, $args) {
+  if($args->theme_location == 'main-menu') {
+    $classes[] = 'list-inline-item';
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class','atg_menu_classes',1,3);
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
