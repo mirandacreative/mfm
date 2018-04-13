@@ -109,3 +109,45 @@ function register_my_menus() {
 }
 add_filter('nav_menu_css_class','atg_menu_classes',1,3);
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+
+if ( function_exists('register_sidebar') ) {
+
+   register_sidebar(array(
+   'name' => 'address',
+   'before_widget' => '<div class="col-md-3 col-lg-3 col-xl-3 mx-auto address">',
+   'after_widget' => '</div>',
+   'before_title' => '<h2>',
+   'after_title' => '</h2>'
+    ));
+
+   register_sidebar(array(
+   'name' => 'megafootone',
+   'before_widget' => '<div class="col-md-2 col-lg-2 col-xl-2 mx-auto footmenu">',
+   'after_widget' => '</div>',
+   'before_title' => '<h2>',
+   'after_title' => '</h2>'
+    ));
+
+   register_sidebar(array(
+   'name' => 'megafoottwo',
+   'before_widget' => '<div class="col-md-2 col-lg-2 col-xl-2 mx-auto footmenu">',
+   'after_widget' => '</div>',
+   'before_title' => '<h2>',
+   'after_title' => '</h2>'
+   ));
+   register_sidebar(array(
+   'name' => 'megafootthree',
+   'before_widget' => '<div class="col-md-2 col-lg-2 col-xl-2 mx-auto footmenu">',
+   'after_widget' => '</div>',
+   'before_title' => '<h2>',
+   'after_title' => '</h2>'
+   ));
+         register_sidebar(array(
+   'name' => 'calltoaction',
+   'before_widget' => '<div class="col-md-3 col-lg-3 col-xl-3 mx-auto cat">',
+   'after_widget' => '</div>',
+   'before_title' => '<h2>',
+   'after_title' => '</h2>'
+   ));
+}
