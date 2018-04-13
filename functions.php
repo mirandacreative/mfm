@@ -8,7 +8,10 @@
 function mc_enqueue_my_scripts() {
     // jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts 
     wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
-
+   wp_enqueue_script( 'responsive-menyas', get_stylesheet_directory_uri() . '/js/responsive-menus.min.js'); // all 
+   wp_enqueue_script( 'matchheight', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js'); // all   
+   wp_enqueue_script( 'bootvalidate', get_stylesheet_directory_uri() . '/js/jqBootstrapValidation.min.js ');
+   wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js ');    
 }
 add_action('wp_enqueue_scripts', 'mc_enqueue_my_scripts');
 
@@ -18,6 +21,7 @@ function mc_enqueue_mccode() {
   wp_enqueue_script('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js', array('jquery'), true);
      // jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts  
      wp_enqueue_script( 'ekko-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');   
+     wp_enqueue_script( 'ekko-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');        
 
 }
 add_action('wp_enqueue_scripts', 'mc_enqueue_mccode');
