@@ -9,3 +9,11 @@ jQuery(function($) {
   });
 
 });
+
+
+var sizer = $( window ).width();
+	
+if(sizer > 768){
+
+	$("ul.sub-menu").css("display","block"); 
+}
