@@ -1,74 +1,45 @@
 <!-- Events Cards -->
 <div class="eventhold">
   <section class="container">
-    <h1 class="my-4 text-center text-lg-center">Events Cards</h1>
+    <h1 class="my-4 text-center text-lg-center"><?php the_sub_field('section_title'); ?></h1>
     <div class="row justify-content-start intro">
       <div class="col-lg-7">
-        <h1 class="display-4">Events at March Farm</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit ullamcorper posuere orci porttitor platea integer, blandit neque laoreet nam praesent. Consequat fames nisl netus bibendum facilisi per eget lacus, hac nullam vel at nec lectus auctor cras, felis magnis massa iaculis viverra congue mattis. Ultrices viverra etiam nunc cubilia conubia at lobortis facilisi, vitae vivamus risus placerat dictumst aenean neque porttitor hac, cras torquent euismod non dis donec aliquet.</p>
+        <h1 class="display-4"><?php the_sub_field('title'); ?></h1>
+        <p><?php the_sub_field('description'); ?></p>
       </div>
     </div>
-    <!-- Cards -->
+      <?php if (have_rows('event')):?> 
     <div class="row justify-content-center events">
-      <!-- One Card -->
+        <?php while (have_rows('event')) : the_row(); 
+              $image = get_sub_field('image');
+              $title = get_sub_field('title');
+              $date = get_sub_field('date');
+              $time = get_sub_field('time');              
+        ?>     
       <div class="col-lg-4 col-sm-6">
         <div class="card h-100">
           <a href="#">
-            <img class="card-img-top" src="http://placehold.it/370x440" alt="">
+            <img class="card-img-top" src="<?= $image; ?>" alt="">
             <div class="card-body">
               <h4 class="card-title">
-              Project Three
+              <?= $title; ?>
               </h4>
               <p class="card-text">
-                <span>Friday</span>
-                <span>November 24th</span>
-                <span>4:00 pm – 7:00 pm</span>
+                <span><?= $date; ?></span>
+                <span><?= $time; ?></span>
               </p>
             </div>
           </a>
         </div>
       </div>
-      <!-- Two Card -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="card h-100">
-          <a href="#">
-            <img class="card-img-top" src="http://placehold.it/370x440" alt="">
-            <div class="card-body">
-              <h4 class="card-title">
-              Project Three
-              </h4>
-              <p class="card-text">
-                <span>Friday</span>
-                <span>November 24th</span>
-                <span>4:00 pm – 7:00 pm</span>
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- Three Card -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="card h-100">
-          <a href="#">
-            <img class="card-img-top" src="http://placehold.it/370x440" alt="">
-            <div class="card-body">
-              <h4 class="card-title">
-              Project Three
-              </h4>
-              <p class="card-text">
-                <span>Friday</span>
-                <span>November 24th</span>
-                <span>4:00 pm – 7:00 pm</span>
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- End -->
-    </div>
+        <?php endwhile; ?>
+    </div>   
+        <?php endif; ?> 
     <!-- Button  -->
     <div class="row justify-content-md-center">
-      <button type="button" class="btn btn-light btn-lg">Large button</button>
+      <a href="<?php the_sub_field('link_url'); ?>">
+        <button type="button" class="btn btn-light btn-lg"><?php the_sub_field('link_text'); ?></button>
+      </a>
     </div>
   </div>
 </section>

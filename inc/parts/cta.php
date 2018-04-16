@@ -1,22 +1,26 @@
+
 <!-- Call to Action Section -->
 <div class="cta">
   <section class="container">
     <div class="row ctahold">
       <div class="col-lg-6">
-        <h1 class="display-4">Share your moments and  experiences at March Farm</h2>
+        <h1 class="display-4"><?php the_sub_field('title'); ?></h2>
       </div>
       <div class="col-lg-6">
-        <p>Lorem Ipsum Proin gravida nibh vel  velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat. Lorem Ipsum Proin gravida nibh vel  velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
+        <p><?php the_sub_field('description'); ?></p>
       </div>
       <div class="w-100"></div>
       <div class="col-lg-12 action">
+      <?php if (have_rows('action_links')):?> 
         <nav class="nav justify-content-center">
-          <a class="nav-link" href="#">#marchfarms</a>
-          <a class="nav-link" href="#">#marchoutings</a>
-          <a class="nav-link" href="#">#marchfarmfresh</a>
-          <a class="nav-link" href="#">#marchfarmevents</a>
-          <a class="nav-link" href="#">#mymarchfarmweddings</a>
-        </nav>
+        <?php while (have_rows('action_links')) : the_row(); 
+              $link_text = get_sub_field('link_text');
+              $link_url = get_sub_field('link_url');
+        ?>        
+          <a class="nav-link" href="<?= $link_url; ?>"><?= $link_text; ?></a>
+        <?php endwhile; ?>
+        </nav>    
+        <?php endif; ?>          
       </div>
     </div>
   </section>

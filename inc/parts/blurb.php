@@ -1,15 +1,25 @@
+
 <!-- Blurb Section -->
 <div class="gray-section">
+ <?php if (have_rows('blurb')):?>  
   <section class="container blurbhold" >
+  <?php while (have_rows('blurb')) : the_row(); 
+      $title = get_sub_field('title');
+      $content = get_sub_field('content');
+      $image = get_sub_field('picture');
+
+  ?>    
     <div class="row">
       <div class="col-lg-6">
-        <h1 class="blurb-header">H1 About</h1>
-        <p>March Farm is a fourth generation family farm destination offering seasonal Pick Your Own berries & fruit along with family friendly activities. The Farm Store &amp Bakery is stocked with farm grown produce, regional food specialties and fresh baked goods – everything you need to compliment your next meal or dessert. The rustically beautiful Pond Side Pines & Hill Top Orchard event spaces are perfect to host your next special occasion, outing or party no matter how small or large.  Join us for our next Farm To Table Dinner and other special events – there’s always something to do at March Farm!</p>
+        <h1 class="blurb-header"><?= $title; ?></h1>
+        <p><?= $content; ?></p>
       </div>
       <div class="col-lg-6">
-        <img class="" src="http://placehold.it/200x250" alt="">
+        <img class="" src="<?= $image; ?>" alt="">
       </div>
     </div>
+        <?php endwhile; ?>
   </section>
+<?php endif; ?>
 </div>
 <!-- /blurb -->
