@@ -18,13 +18,13 @@ if (have_rows('modules')):
             get_template_part('inc/parts/cta');
 
         elseif (get_row_layout() == 'events'):
-            get_template_part('inc/parts/events');   
+            get_template_part('inc/parts/events');
 
         elseif (get_row_layout() == 'leftimgblurbs'):
             get_template_part('inc/parts/calloutimgleft');
 
         elseif (get_row_layout() == 'video'):
-            get_template_part('inc/parts/videotext');                                                               
+            get_template_part('inc/parts/videotext');
 
         endif;
 
@@ -33,7 +33,6 @@ if (have_rows('modules')):
 else :
     // no layouts found
  ?>
-     <h1><?php the_title() ?></h1>
     <?php
 endif;
 ?>

@@ -1,5 +1,5 @@
 <!-- Content Item Row -->
-<div style="background-image: url('img/bg-leaves.png') no-repeat left center; background-color: #F1F2F3;">
+<div style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/img/bg-leaves.png') no-repeat left center; background-color: #F1F2F3;">
     <section class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-6">
