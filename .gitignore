@@ -16,6 +16,10 @@ node_modules/
 sftp-config.json
 .sublime-workspace
 
+#  Atom  #
+deployment-config.json
+.ftpconfig
+
 #  Wordmove #
 Movefile
 Movefile.yml
