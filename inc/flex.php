@@ -14,6 +14,9 @@ if (have_rows('modules')):
         elseif (get_row_layout() == 'square_gallery'):
             get_template_part('inc/parts/gallerysquare');
 
+            elseif (get_row_layout() == 'rect_gallery'):
+                get_template_part('inc/parts/galleryrectangle');
+
         elseif (get_row_layout() == 'cta'):
             get_template_part('inc/parts/cta');
 
@@ -24,7 +27,7 @@ if (have_rows('modules')):
             get_template_part('inc/parts/calloutimgleft');
 
             elseif (get_row_layout() == 'rightimgblurbs'):
-                get_template_part('inc/parts/calloutimgright');            
+                get_template_part('inc/parts/calloutimgright');
 
         elseif (get_row_layout() == 'video'):
             get_template_part('inc/parts/videotext');
