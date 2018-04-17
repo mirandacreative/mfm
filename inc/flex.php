@@ -26,6 +26,9 @@ if (have_rows('modules')):
         elseif (get_row_layout() == 'video'):
             get_template_part('inc/parts/videotext');
 
+            elseif (get_row_layout() == 'accordian'):
+                get_template_part('inc/parts/accordian');
+
         endif;
 
     endwhile;
