@@ -14,8 +14,8 @@ if (have_rows('modules')):
         elseif (get_row_layout() == 'square_gallery'):
             get_template_part('inc/parts/gallerysquare');
 
-            elseif (get_row_layout() == 'rect_gallery'):
-                get_template_part('inc/parts/galleryrectangle');
+        elseif (get_row_layout() == 'rect_gallery'):
+            get_template_part('inc/parts/galleryrectangle');
 
         elseif (get_row_layout() == 'cta'):
             get_template_part('inc/parts/cta');
@@ -26,14 +26,20 @@ if (have_rows('modules')):
         elseif (get_row_layout() == 'leftimgblurbs'):
             get_template_part('inc/parts/calloutimgleft');
 
-            elseif (get_row_layout() == 'rightimgblurbs'):
-                get_template_part('inc/parts/calloutimgright');
+        elseif (get_row_layout() == 'rightimgblurbs'):
+              get_template_part('inc/parts/calloutimgright');
 
         elseif (get_row_layout() == 'video'):
             get_template_part('inc/parts/videotext');
 
-            elseif (get_row_layout() == 'accordian'):
-                get_template_part('inc/parts/accordian');
+        elseif (get_row_layout() == 'accordian'):
+            get_template_part('inc/parts/accordian');
+
+        elseif (get_row_layout() == 'partners'):
+            get_template_part('inc/parts/partners');                
+
+        elseif (get_row_layout() == 'map'):
+            get_template_part('inc/parts/map');
 
         endif;
 
