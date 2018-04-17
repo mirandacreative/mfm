@@ -23,6 +23,9 @@ if (have_rows('modules')):
         elseif (get_row_layout() == 'leftimgblurbs'):
             get_template_part('inc/parts/calloutimgleft');
 
+            elseif (get_row_layout() == 'rightimgblurbs'):
+                get_template_part('inc/parts/calloutimgright');            
+
         elseif (get_row_layout() == 'video'):
             get_template_part('inc/parts/videotext');
 

@@ -1,5 +1,5 @@
 <?php if (have_rows('accordian_tab')):?>
-  $i = 0;
+  <?php   $i = 0; ?>
   <!-- Accordian Section -->
   <div class="accordion">
     <section class="container" >
