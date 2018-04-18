@@ -19,12 +19,19 @@ wp_nav_menu( array(
   'walker'            => new wp_bootstrap_navwalker())
  );
     ?>
+    <?php if( have_rows('social_widget', 'option') ): ?>
+
       <ul class="navbar-nav social-menu">
-        <li class="social"><a class="nav-link" href="#"> <i class="fa fa-fw fa-vimeo"></i></a></li>
-        <li class="social"><a class="nav-link" href="#"> <i class="fa fa-fw fa-instagram"></i></a></li>
-        <li class="social"><a class="nav-link" href="#"> <i class="fa fa-fw fa-twitter"></i></a></li>
-        <li class="social"><a class="nav-link" href="#"> <i class="fa fa-fw fa-facebook"></i></a></li>
+
+        <?php while( have_rows('social_widget', 'option') ): the_row(); ?>
+            <li class="social"><a class="nav-link" href="<?php the_sub_field('link'); ?>"> <i class="fa fa-fw <?php the_sub_field('font_icon'); ?>"></i></a></li>
+
+        <?php endwhile; ?>
+
       </ul>
+
+    <?php endif; ?>
+
     </div>
   </div>
 </nav>
