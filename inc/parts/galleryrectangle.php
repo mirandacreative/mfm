@@ -10,7 +10,7 @@
              $image = get_sub_field('image'); ?>
 
          <div class="col-lg-3 col-md-4 col-xs-6">
-           <a href="#" class="d-block mb-4 h-100">
+             <a href="<?= $image; ?>" class="d-block mb-4 h-100" data-featherlight="image">
              <img class="img-fluid" src="<?= $image; ?>" alt="">
            </a>
          </div>
